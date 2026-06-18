@@ -1,0 +1,326 @@
+/* ============================================================
+   Natnael M. Negash — academic personal site
+   Palette: ink navy, parchment, oxidized-copper accent
+   Type: Fraunces (display serif) + Inter (body) + IBM Plex Mono (data)
+   ============================================================ */
+
+:root {
+  --ink:      #14202e;   /* deep navy ink */
+  --ink-soft: #34465a;   /* secondary text */
+  --paper:    #f7f4ec;   /* warm parchment */
+  --paper-2:  #efe9da;   /* slightly deeper panel */
+  --line:     #d8cfba;   /* hairline */
+  --copper:   #9a5b34;   /* oxidized copper accent */
+  --copper-2: #b87a4e;   /* lighter copper for hover */
+  --white:    #ffffff;
+  --maxw: 1080px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--copper); text-decoration: none; }
+a:hover { color: var(--copper-2); text-decoration: underline; }
+
+img { max-width: 100%; height: auto; display: block; }
+
+/* ---------- Header / nav ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(247,244,236,0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.nav-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0.85rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.brand {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.brand:hover { text-decoration: none; color: var(--copper); }
+.nav-links {
+  display: flex;
+  gap: 1.35rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+.nav-links a {
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+}
+.nav-links a:hover { color: var(--ink); text-decoration: none; border-color: var(--copper); }
+.nav-links a.active { color: var(--ink); border-color: var(--copper); }
+
+/* hamburger for mobile */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 0;
+  font-size: 1.5rem;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+/* ---------- Layout ---------- */
+main { max-width: var(--maxw); margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+
+.eyebrow {
+  font-family: "IBM Plex Mono", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  color: var(--copper);
+  margin-bottom: 0.6rem;
+}
+
+h1, h2, h3 { font-family: "Fraunces", Georgia, serif; color: var(--ink); line-height: 1.15; }
+h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 600; letter-spacing: -0.02em; margin: 0 0 0.5rem; }
+h2 { font-size: clamp(1.5rem, 3.5vw, 2rem); font-weight: 600; margin: 2.5rem 0 1rem; }
+h3 { font-size: 1.2rem; font-weight: 600; margin: 1.5rem 0 0.5rem; }
+
+.page-title {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* ---------- Hero (home) ---------- */
+.hero {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  padding: 1rem 0 2rem;
+}
+.hero-portrait {
+  border-radius: 4px;
+  border: 1px solid var(--line);
+  box-shadow: 0 18px 40px -24px rgba(20,32,46,0.55);
+  background: var(--paper-2);
+}
+.hero h1 { margin-bottom: 0.25rem; }
+.hero .role {
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  font-weight: 500;
+  margin: 0.15rem 0;
+}
+.hero .role strong { color: var(--ink); font-weight: 600; }
+.affil {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  margin-top: 0.9rem;
+  line-height: 1.7;
+}
+
+.social {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 1.3rem;
+  flex-wrap: wrap;
+}
+.social a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid var(--line);
+  background: var(--white);
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+.social a:hover { border-color: var(--copper); text-decoration: none; color: var(--copper); }
+
+/* ---------- Cards / panels ---------- */
+.lead {
+  font-size: 1.1rem;
+  color: var(--ink-soft);
+}
+.panel {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 1.4rem 1.6rem;
+  margin: 1.2rem 0;
+}
+
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; }
+
+ul.tick { list-style: none; padding-left: 0; }
+ul.tick li {
+  position: relative;
+  padding-left: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+ul.tick li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--copper);
+}
+
+/* ---------- Research blocks ---------- */
+.research-block {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.6rem;
+  margin: 2rem 0;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--line);
+}
+.research-block img {
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  margin-top: 0.8rem;
+}
+
+/* ---------- Publications ---------- */
+.legend {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 0.7rem 1rem;
+  margin-bottom: 1.5rem;
+}
+.pub-list { list-style: none; padding: 0; margin: 0; }
+.pub-list li {
+  display: grid;
+  grid-template-columns: 3.2rem 1fr;
+  gap: 1rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.pub-tag {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--copper);
+  padding-top: 0.15rem;
+}
+.pub-body { font-size: 0.96rem; }
+.pub-award {
+  display: inline-block;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--copper);
+  border: 1px solid var(--copper);
+  border-radius: 3px;
+  padding: 0.05rem 0.4rem;
+  margin-left: 0.3rem;
+}
+
+/* ---------- Timeline (news) ---------- */
+.timeline { border-left: 2px solid var(--line); margin-left: 0.5rem; padding-left: 1.5rem; }
+.timeline-item { position: relative; margin-bottom: 2rem; }
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -1.94rem;
+  top: 0.45rem;
+  width: 10px; height: 10px;
+  background: var(--copper);
+  border-radius: 50%;
+  border: 2px solid var(--paper);
+}
+.timeline-item .date {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.78rem;
+  color: var(--copper);
+  letter-spacing: 0.04em;
+}
+.timeline-item img { border-radius: 6px; border: 1px solid var(--line); margin-top: 0.7rem; max-width: 420px; }
+
+/* ---------- Gallery ---------- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+.gallery-grid img { border-radius: 6px; border: 1px solid var(--line); }
+
+/* ---------- Empty state ---------- */
+.empty {
+  background: var(--paper-2);
+  border: 1px dashed var(--line);
+  border-radius: 6px;
+  padding: 2rem;
+  text-align: center;
+  color: var(--ink-soft);
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  border-top: 1px solid var(--line);
+  background: var(--paper-2);
+}
+.footer-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  display: grid;
+  gap: 0.3rem;
+}
+.footer-inner a { color: var(--ink); }
+.footer-inner .name { font-family: "Fraunces", serif; font-weight: 600; color: var(--ink); font-size: 1.05rem; margin-bottom: 0.4rem; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 760px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-portrait { max-width: 280px; }
+  .two-col { grid-template-columns: 1fr; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+    flex-direction: column;
+    gap: 0;
+    padding: 0.5rem 1.5rem 1rem;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { padding: 0.6rem 0; border-bottom: 1px solid var(--line); }
+  .nav-toggle { display: block; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
